@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BookmyShow/BookmyShow.iml" filepath="$PROJECT_DIR$/BookmyShow/BookmyShow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Calender/Calender.iml" filepath="$PROJECT_DIR$/Calender/Calender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Coupons/Coupons.iml" filepath="$PROJECT_DIR$/Coupons/Coupons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Cricbuzz/Cricbuzz.iml" filepath="$PROJECT_DIR$/Cricbuzz/Cricbuzz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FacebookFriend/FacebookFriend.iml" filepath="$PROJECT_DIR$/FacebookFriend/FacebookFriend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FileSystem/FileSystem.iml" filepath="$PROJECT_DIR$/FileSystem/FileSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FileSystemHard/FileSystemHard.iml" filepath="$PROJECT_DIR$/FileSystemHard/FileSystemHard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JobScheduler/JobScheduler.iml" filepath="$PROJECT_DIR$/JobScheduler/JobScheduler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kafka-Pub-Sub/Kafka-Pub-Sub.iml" filepath="$PROJECT_DIR$/Kafka-Pub-Sub/Kafka-Pub-Sub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Key-Value-Reddis/Key-Value-Reddis.iml" filepath="$PROJECT_DIR$/Key-Value-Reddis/Key-Value-Reddis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LLD.iml" filepath="$PROJECT_DIR$/LLD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Logger/Logger.iml" filepath="$PROJECT_DIR$/Logger/Logger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MusicPlaylist/MusicPlaylist.iml" filepath="$PROJECT_DIR$/MusicPlaylist/MusicPlaylist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ParkingLot/ParkingLot.iml" filepath="$PROJECT_DIR$/ParkingLot/ParkingLot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RailwayPlatforms/RailwayPlatforms.iml" filepath="$PROJECT_DIR$/RailwayPlatforms/RailwayPlatforms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RateLimitter/RateLimitter.iml" filepath="$PROJECT_DIR$/RateLimitter/RateLimitter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RoomPricingVisitorPattern/RoomPricingVisitorPattern.iml" filepath="$PROJECT_DIR$/RoomPricingVisitorPattern/RoomPricingVisitorPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Splitwise/Splitwise.iml" filepath="$PROJECT_DIR$/Splitwise/Splitwise.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StackOverflow/StackOverflow.iml" filepath="$PROJECT_DIR$/StackOverflow/StackOverflow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StateMachine/StateMachine.iml" filepath="$PROJECT_DIR$/StateMachine/StateMachine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StockPriceUpdater/StockPriceUpdater.iml" filepath="$PROJECT_DIR$/StockPriceUpdater/StockPriceUpdater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TickToe/TickToe.iml" filepath="$PROJECT_DIR$/TickToe/TickToe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Uber-Car-Booking-System/Uber-Car-Booking-System.iml" filepath="$PROJECT_DIR$/Uber-Car-Booking-System/Uber-Car-Booking-System.iml" />
+    </modules>
+  </component>
+</project>
