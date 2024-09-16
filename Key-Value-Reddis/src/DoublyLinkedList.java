@@ -28,7 +28,7 @@ public class DoublyLinkedList<E> {
         node.next.prev = prevNode;
     }
 
-    public DoublyLinkedListNode getFirstNode() {
+    public DoublyLinkedListNode<E> getFirstNode() {
         if (head.next == tail) {
             return null;
         }

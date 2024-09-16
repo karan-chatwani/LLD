@@ -6,15 +6,28 @@ import java.util.LinkedList;
 import java.util.Map;
 
 public class LruEvictionPolicy<Key> implements EvictionPolicy<Key> {
-    Deque<Key> deque = new ArrayDeque<>();
+    private DoublyLinkedList<Key> doublyLinkedList = new DoublyLinkedList<>();
+    Map<Key, DoublyLinkedListNode<Key>> doublyLinkedListNodeMap;
 
     @Override
     public void keyAccessded(Key key) {
+        if (!doublyLinkedListNodeMap.containsKey(key)) {
+            doublyLinkedList.addNodeFront(new DoublyLinkedListNode<>(key));
+            doublyLinkedListNodeMap.put(key, doublyLinkedList.getFirstNode());
+        } else {
+            DoublyLinkedListNode<Key> accessedNode = doublyLinkedListNodeMap.get(key);
+            doublyLinkedList.removeNode(accessedNode);
+            doublyLinkedList.addNodeFront(new DoublyLinkedListNode<>(key));
+            doublyLinkedListNodeMap.put(key, doublyLinkedList.getFirstNode());
+        }
 
     }
 
     @Override
     public Key evict() {
-        return null;
+        DoublyLinkedListNode<Key> firstNode = doublyLinkedList.getFirstNode();
+        if (firstNode == null) return null;
+        doublyLinkedList.removeNode(firstNode);
+        return firstNode.element;
     }
 }
