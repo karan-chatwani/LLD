@@ -15,6 +15,4 @@ public class RideMatchingService {
     public void updateLocationRider(String riderId, Location updatedLocation){
         riderMap.get(riderId).updateLocation(updatedLocation);
     }
-    public void
-
 }
