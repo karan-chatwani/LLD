@@ -23,7 +23,7 @@ public class RideService {
         rideMap = new HashMap<>();
     }
 
-    public Ride createRide(String riderId, Location destination) {
+    public Ride createRide(final String riderId, final Location destination) {
         Location riderLocation = riderRepository.getRider(riderId).getLocation();
         List<Cab> nearByCabs = cabRepository.getCabsUptoDistance(riderLocation, MAX_DISTANCE_SEARCH);
         List<Cab> availableCabs = nearByCabs.stream()
@@ -38,10 +38,11 @@ public class RideService {
         Ride ride = new Ride(rideId, riderRepository.getRider(riderId), riderLocation, destination, fare);
         selectedCab.get().acceptRide(ride);
         rideMap.put(rideId, ride);
+        riderRepository.addRide(riderId, ride);
         return ride;
     }
 
-    public void updateRideStatus(String rideId, RideStatus status) {
+    public void updateRideStatus(final String rideId, final RideStatus status) {
         rideMap.get(rideId).updateStatus(status);
     }
 

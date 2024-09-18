@@ -1,5 +1,7 @@
 package models;
 
+import java.util.List;
+
 public class RiderService {
     private RiderRepository riderRepository;
     private static RiderService INSTANCE;
@@ -21,5 +23,9 @@ public class RiderService {
 
     public void updateLocation(final String riderId, final int x, int y) {
         riderRepository.updateLocationRider(new Location(x, y), riderId);
+    }
+
+    public List<Ride> getRideHistory(final String riderId) {
+        return riderRepository.getRider(riderId).getRideList();
     }
 }

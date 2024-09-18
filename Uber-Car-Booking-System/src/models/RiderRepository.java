@@ -24,4 +24,8 @@ public class RiderRepository {
     public Rider getRider(final String riderId) {
         return riderMap.get(riderId);
     }
+
+    public void addRide(final String riderId, final Ride ride) {
+        riderMap.get(riderId).addRide(ride);
+    }
 }

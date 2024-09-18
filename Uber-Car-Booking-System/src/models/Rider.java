@@ -5,6 +5,11 @@ import java.util.List;
 public class Rider {
     private String riderId;
     private Location location;
+
+    public List<Ride> getRideList() {
+        return rideList;
+    }
+
     private List<Ride> rideList;
 
     public Rider(String riderId) {
