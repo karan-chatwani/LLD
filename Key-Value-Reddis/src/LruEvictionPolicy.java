@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class LruEvictionPolicy<Key> implements EvictionPolicy<Key> {
     private DoublyLinkedList<Key> doublyLinkedList = new DoublyLinkedList<>();
-    Map<Key, DoublyLinkedListNode<Key>> doublyLinkedListNodeMap;
+    Map<Key, DoublyLinkedListNode<Key>> doublyLinkedListNodeMap = new HashMap<>();
 
     @Override
     public void keyAccessded(Key key) {
@@ -25,9 +25,10 @@ public class LruEvictionPolicy<Key> implements EvictionPolicy<Key> {
 
     @Override
     public Key evict() {
-        DoublyLinkedListNode<Key> firstNode = doublyLinkedList.getFirstNode();
-        if (firstNode == null) return null;
-        doublyLinkedList.removeNode(firstNode);
-        return firstNode.element;
+        DoublyLinkedListNode<Key> lastNode = doublyLinkedList.getLastNode();
+        if (lastNode == null) return null;
+        doublyLinkedList.removeNode(lastNode);
+        System.out.println("key evicted" + lastNode.element);
+        return lastNode.element;
     }
 }
