@@ -9,6 +9,10 @@ public class Location {
         this.y = y;
     }
 
+    public double getDistance(Location location) {
+        return Math.sqrt(Math.pow(x - location.x, 2) + Math.pow(y - location.y, 2));
+    }
+
     public int getX() {
         return x;
     }

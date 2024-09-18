@@ -2,12 +2,21 @@ package models;
 
 public class Ride {
     private String rideId;
-    private Driver driver;
+    private Cab cab;
     private Rider rider;
     private Location pickup;
     private Location destination;
-    private BaseFare baseFare;
+    private double baseFare;
     private RideStatus rideStatus;
+
+    public Ride(String rideId, Rider rider, Location pickup, Location destination, double baseFare) {
+        this.rideId = rideId;
+        this.rider = rider;
+        this.pickup = pickup;
+        this.destination = destination;
+        this.baseFare = baseFare;
+        this.rideStatus = RideStatus.ACCEPTED;
+    }
 
     public void updateStatus(RideStatus rideStatus) {
         this.rideStatus = rideStatus;
@@ -17,16 +26,16 @@ public class Ride {
         return rideId;
     }
 
+    public Cab getCab() {
+        return cab;
+    }
+
+    public void setCab(Cab cab) {
+        this.cab = cab;
+    }
+
     public void setRideId(String rideId) {
         this.rideId = rideId;
-    }
-
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
-        this.driver = driver;
     }
 
     public Rider getRider() {
@@ -51,14 +60,6 @@ public class Ride {
 
     public void setDestination(Location destination) {
         this.destination = destination;
-    }
-
-    public BaseFare getBaseFare() {
-        return baseFare;
-    }
-
-    public void setBaseFare(BaseFare baseFare) {
-        this.baseFare = baseFare;
     }
 
     public RideStatus getRideStatus() {

@@ -24,6 +24,7 @@
       <module fileurl="file://$PROJECT_DIR$/StateMachine/StateMachine.iml" filepath="$PROJECT_DIR$/StateMachine/StateMachine.iml" />
       <module fileurl="file://$PROJECT_DIR$/StockPriceUpdater/StockPriceUpdater.iml" filepath="$PROJECT_DIR$/StockPriceUpdater/StockPriceUpdater.iml" />
       <module fileurl="file://$PROJECT_DIR$/TickToe/TickToe.iml" filepath="$PROJECT_DIR$/TickToe/TickToe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Transaction-Handling-reddis/Transaction-Handling-reddis.iml" filepath="$PROJECT_DIR$/Transaction-Handling-reddis/Transaction-Handling-reddis.iml" />
       <module fileurl="file://$PROJECT_DIR$/Uber-Car-Booking-System/Uber-Car-Booking-System.iml" filepath="$PROJECT_DIR$/Uber-Car-Booking-System/Uber-Car-Booking-System.iml" />
     </modules>
   </component>
