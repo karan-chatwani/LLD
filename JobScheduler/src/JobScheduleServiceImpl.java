@@ -26,14 +26,13 @@ public class JobScheduleServiceImpl implements IJobScheduler {
 
     @Override
     public void scheduleOneTimeJob(Runnable task, int delay, TimeUnit unit) {
-        Date startDate = new Date(Calendar.getInstance().getTime().getTime() + unit.toMillis(delay));
+        Date startDate = new Date(System.currentTimeMillis() + unit.toMillis(delay));
         Job job = new Job(task, TaskType.ONE_TIME, startDate, -1, unit);
         addJobToQueue(job);
     }
 
     @Override
     public void scheduleReccuringJob(Runnable task, int delay, int recurringDelay, TimeUnit unit) {
-//        Date startDate = new Date(Calendar.getInstance().getTime().getTime() + unit.toMillis(delay));
         Date startDate = new Date(System.currentTimeMillis() + unit.toMillis(delay));
         Job job = new Job(task, TaskType.RECCURING, startDate, recurringDelay, unit);
         addJobToQueue(job);

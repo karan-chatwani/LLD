@@ -17,7 +17,6 @@ public class TopicImpl implements ITopic {
 
     @Override
     public void enqueueMessage(Message message) {
-        System.out.println("Message enqueued" + message.getMessage());
         reentrantLock.lock();
         queue.add(message);
         reentrantLock.unlock();
@@ -26,7 +25,6 @@ public class TopicImpl implements ITopic {
 
     @Override
     public Optional<Message> readMessageIfPresent(int offset) {
-//        System.out.println(queue.size());
         reentrantLock.lock();
         if (offset >= queue.size()) {
             reentrantLock.unlock();

@@ -17,11 +17,6 @@ public class QueueMediatorImpl implements IQueueMediator {
 
     @Override
     public void publishToTopic(Message message, String topicName) {
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-
-        }
         topicMap.get(topicName).enqueueMessage(message);
     }
 

@@ -16,7 +16,6 @@ public class SlidingWindowRateLimitter implements IRateLimitter {
 
     @Override
     public boolean isAllowed(String userId) {
-        System.out.println(userId);
         long currentTime = System.currentTimeMillis();
         userTimeStampRequests.putIfAbsent(userId, new LinkedList<>());
         Queue<Long> userQueue = userTimeStampRequests.get(userId);

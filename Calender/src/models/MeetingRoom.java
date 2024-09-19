@@ -1,6 +1,5 @@
 package models;
 
-import javax.print.DocFlavor;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,20 +24,8 @@ public class MeetingRoom {
 
     public boolean isAvailable(Interval interval, int capacity) {
         if (this.capacity < capacity) return false;
-//        for (Meeting meeting : calender.getMeetings()) {
-//            if (isConflicting(meeting.getInterval(), interval)) {
-//                return false;
-//            }
-//        }
         return calender.isSlotAvailable(interval.getStartTime(), interval.getEndTime());
     }
-
-    private boolean isConflicting(Interval bookedInterval, Interval requestedInterval) {
-        return (bookedInterval.getStartTime() <= requestedInterval.getStartTime() && requestedInterval.getStartTime() < bookedInterval.getEndTime())
-                || (bookedInterval.getStartTime() < requestedInterval.getEndTime() && requestedInterval.getEndTime() <= bookedInterval.getEndTime())
-                || (requestedInterval.getStartTime() <= bookedInterval.getStartTime() && requestedInterval.getEndTime() >= bookedInterval.getEndTime());
-    }
-
     public synchronized void bookRoom(Interval interval, List<User> userList) {
         if (!isAvailable(interval, userList.size())) {
             throw new RuntimeException("Not available now");

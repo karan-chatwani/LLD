@@ -17,7 +17,7 @@ public class Cache<Key, Value> {
                 throw new RuntimeException("no key to evict");
             }
             storage.remove(keyRemoved);
-            put(key, value);
+            this.put(key, value);
         }
     }
 
