@@ -1,0 +1,43 @@
+ class MyHashSet {
+    vector<list<int>> v;
+    int size;
+public:
+    MyHashSet() {
+        size=10004;
+        v=vector<list<int>>(size);
+    }
+    int getIndex(int key){
+        return key%size;
+    }
+    void add(int key) {
+        int ind=getIndex(key);
+        if(find(v[ind].begin(),v[ind].end(),key)!=v[ind].end()) return;
+        v[ind].push_back(key);
+    }
+    
+    void remove(int key) {
+        int ind=getIndex(key);
+        for(auto it=v[ind].begin();it!=v[ind].end();it++){
+            if(*it==key) {
+                v[ind].erase(it);
+                break;
+            }
+        }
+    }
+    
+    bool contains(int key) {
+        int ind=getIndex(key);
+        for(auto it:v[ind]){
+            if(it==key) return true;
+        }
+        return false;
+    }
+};
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet* obj = new MyHashSet();
+ * obj->add(key);
+ * obj->remove(key);
+ * bool param_3 = obj->contains(key);
+ */
