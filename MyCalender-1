@@ -1,0 +1,41 @@
+ class Interval implements Comparable<Interval>{
+    private int start;
+    private int end;
+    public Interval(int start,int end){
+        this.start=start;
+        this.end=end;
+    }
+    public int getStart(){
+        return start;
+    }
+    public int getEnd(){
+        return end;
+    }
+    public int compareTo(Interval obj) 
+    { 
+        return this.start-obj.getStart(); 
+    } 
+}
+class MyCalendar {
+     private TreeSet<Interval> slotsBooked;
+    public MyCalendar() {
+        slotsBooked=new TreeSet<Interval>();
+    }
+    
+    public boolean book(int start, int end) {
+        Interval interval=new Interval(start,end);
+        Interval lowerInterval = slotsBooked.floor(interval);
+        Interval higherInterval = slotsBooked.ceiling(interval);
+        boolean isAllowed= (lowerInterval == null || lowerInterval.getEnd() <= interval.getStart()) && (higherInterval == null || interval.getEnd() <= higherInterval.getStart());
+        if(isAllowed){
+        slotsBooked.add(interval);
+        }
+        return isAllowed;
+    }
+    }
+
+/**
+ * Your MyCalendar object will be instantiated and called as such:
+ * MyCalendar obj = new MyCalendar();
+ * boolean param_1 = obj.book(start,end);
+ */
