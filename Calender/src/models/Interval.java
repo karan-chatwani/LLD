@@ -13,17 +13,9 @@ public class Interval {
         return startTime;
     }
 
-    public void setStartTime(int startTime) {
-        this.startTime = startTime;
-    }
 
     public int getEndTime() {
         return endTime;
     }
-
-    public void setEndTime(int endTime) {
-        this.endTime = endTime;
-    }
-
 
 }

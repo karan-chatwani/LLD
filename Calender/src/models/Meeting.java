@@ -8,9 +8,6 @@ public class Meeting {
     private List<User> userList;
     private String roomId;
 
-    public String getMeetingId() {
-        return meetingId;
-    }
 
     public void setMeetingId(String meetingId) {
         this.meetingId = meetingId;
@@ -24,16 +21,9 @@ public class Meeting {
         this.interval = interval;
     }
 
-    public List<User> getUserList() {
-        return userList;
-    }
 
     public void setUserList(List<User> userList) {
         this.userList = userList;
-    }
-
-    public String getRoomId() {
-        return roomId;
     }
 
     public void setRoomId(String roomId) {

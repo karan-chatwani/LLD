@@ -14,6 +14,10 @@ public class MeetingRoom {
         calender = new Calender();
     }
 
+    public Calender getCalender() {
+        return calender;
+    }
+
     public int getCapacity() {
         return this.capacity;
     }
@@ -26,6 +30,7 @@ public class MeetingRoom {
         if (this.capacity < capacity) return false;
         return calender.isSlotAvailable(interval.getStartTime(), interval.getEndTime());
     }
+
     public synchronized void bookRoom(Interval interval, List<User> userList) {
         if (!isAvailable(interval, userList.size())) {
             throw new RuntimeException("Not available now");
