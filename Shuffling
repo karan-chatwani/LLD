@@ -1,0 +1,37 @@
+class Solution {
+public:
+vector<int> temp,original;
+    Solution(vector<int>& nums) {
+        temp=nums;
+        original=nums;
+    }
+    
+    vector<int> reset() {
+       original=temp; 
+       return original;
+    }
+    
+    vector<int> shuffle() {
+        int n=original.size();
+        for(int i=original.size()-1;i>=0;i--){
+            int j=rand()%n;
+            swap(original[i],original[j]);
+            n--;
+        }
+        return original;
+    }
+};
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution* obj = new Solution(nums);
+ * vector<int> param_1 = obj->reset();
+ * vector<int> param_2 = obj->shuffle();
+ */
+
+
+ The probability for a particular element to be selected as the ith element is 1/i (as we randomly draw a number from i elements). Thus, for a particular element, the probability of it being at the nth position in the array is 1/n. (where n is the size of the array). i.e P(n) = 1/n
+
+What about the probability of it being at the (n-1)th position?
+For it to be in the (n-1)th position, it needs to be rejected at the nth position and then accepted at the (n-1)th position.
+Thus P(n-1) = ((n-1)/n) * (1/n-1) , or P(n-1) = 1/n
