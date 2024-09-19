@@ -1,0 +1,59 @@
+struct Trie{
+    struct Trie* children[26];
+    bool present;
+    Trie(){
+        for(int i=0;i<26;i++) children[i]=NULL;
+        present=false;
+    }
+};
+class WordDictionary {
+    Trie* trie;
+public:
+    WordDictionary() {
+        trie=new Trie();
+    }
+    
+    void addWord(string word) {
+        Trie* cur=trie;
+        for(char it:word){
+            int z=it-'a';
+            if(cur->children[z]==NULL){
+                cur->children[z]=new Trie();
+            }
+            cur=cur->children[z];
+        }
+        cur->present=true;
+    }
+    
+    bool search(string word) {
+        Trie* cur=trie;
+        if(word.length()==1 &&word[0]=='.'){
+            for(int i=0;i<26;i++){
+                 if(cur->children[i]!=NULL && cur->children[i]->present) return true;
+                }
+                return false;
+        }
+       return search2(word,cur);
+    }
+   bool search2(string word, Trie * tri){
+    if(word.length()!=0 && tri==NULL) return false;
+    if(word.length()==1 && word[0]=='.') return tri->present;
+    for(char it:word){
+             if(it=='.'){
+                bool k=false;
+                for(int i=0;i<26;i++){
+                 k=k| search2(word.substr(1,word.length()-1),tri->children[i]);
+                }
+                return k;
+             }
+           int z=it-'a';
+           if(z<0||z>=26) return false;
+             if(tri->children[z]==NULL){
+                return false;
+            }
+            tri=tri->children[z];
+        }
+        return tri->present;
+    
+   }
+};
