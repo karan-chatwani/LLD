@@ -17,7 +17,7 @@ public class ParkingLot {
         this.name = name;
     }
 
-    public static ParkingLot getInstance(String name, List<ParkingFloor> parkingFloorList) {
+    synchronized public static ParkingLot getInstance(String name, List<ParkingFloor> parkingFloorList) {
         if (INSTANCE == null) {
             INSTANCE = new ParkingLot(name, parkingFloorList);
         }

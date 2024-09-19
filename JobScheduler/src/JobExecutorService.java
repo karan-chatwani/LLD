@@ -2,6 +2,7 @@ import java.util.Date;
 import java.util.PriorityQueue;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
@@ -29,9 +30,14 @@ public class JobExecutorService implements Runnable {
                         jobPriorityQueue.remove();
                         jobExecutor.execute(job);
                     }
+                    try {
+                        entryAdded.await(job.getStartTime().getTime() - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
+                    } catch (InterruptedException e) {
+
+                    }
                 } else {
                     try {
-                        entryAdded.await();
+                        entryAdded.await(); //no jobs in queue, so wait for signal when some thread pushes in queue
                     } catch (InterruptedException e) {
 
                     }

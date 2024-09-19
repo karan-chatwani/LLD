@@ -19,9 +19,9 @@ public class Payment {
 
     public PaymentStatus process() {
         if (ticketFare != amount) {
-            this.paymentStatus = PaymentStatus.CANCELLED;
+            paymentStatus = PaymentStatus.CANCELLED;
         } else {
-            this.paymentStatus = PaymentStatus.SUCCESS;
+            paymentStatus = PaymentStatus.SUCCESS;
         }
         return this.paymentStatus;
     }
