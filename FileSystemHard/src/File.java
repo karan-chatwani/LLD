@@ -1,14 +1,15 @@
-public class File extends Entity {
-    private String fileName;
-    private String content;
+import java.util.HashMap;
+import java.util.Map;
 
-    public File(String fileName, String content) {
-        super(fileName);
-        this.fileName = fileName;
-        this.content = content;
-    }
+public class File {
+    boolean isFile = false;
+    Map<String, File> files;
+    String content;
 
-    public void addContent(String content) {
-        this.content += content;
+    public File() {
+        isFile = false;
+        files = new HashMap<>();
+        content = "";
     }
 }
+
